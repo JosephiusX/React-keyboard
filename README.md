@@ -45,11 +45,9 @@
 
   # Components Needed:
     
-    TextInput
+    TextArea
 
-    Keyboard:
-      Key
-      KeyWide
-      keyExtraWide
-      KeyDark
+    Container
+      KeyboardKeys
+        Key
 
