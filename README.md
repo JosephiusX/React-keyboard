@@ -51,3 +51,9 @@
       KeyboardKeys
         Key
 
+
+
+# TextInput vs innerHTML
+
+it seems like inner html would be more for if I had an icon I want to select instead of just some input,
+it would be the more inclusive option though
