@@ -57,3 +57,9 @@
 
 it seems like inner html would be more for if I had an icon I want to select instead of just some input,
 it would be the more inclusive option though
+
+# learned how to set state for a array and then map through them creating a button for eact with the help of this link :
+
+  https://medium.com/codex/how-to-use-array-in-reactjs-2a30d8b72503
+
+Next I want to try to add event listeners as well as styles, using the map function of corse
