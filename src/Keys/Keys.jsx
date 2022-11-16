@@ -1,14 +1,12 @@
 import React, {useState, useRef, useEffect} from 'react';
 
 export const Keys = () => {
-
-  const keyRef = useRef()
   
   const [text, setText] = useState("");
 
-  function input (e, text) {
+  function input (e) {
     e.preventDefault();
-    setText(prevText => prevText + e.target.innerText)
+    setText(prevText => prevText + e.target.textContent)
   }
 
   const [layout, setLayout] = useState([
@@ -19,13 +17,31 @@ export const Keys = () => {
     "space"
   ])
   
-  const [keys, setkeys] = useState ([
-    layout.map((key,index)=>
-      
-        <button ref={keyRef} onClick={input} key={index}>{key}</button>
-      
+  const [capsLock, setCapsLock] = useState(() => {
+    console.log('setting caps state');
+    return false
+  })
+
+  // turnary operator
+// <if this is true> ? <render this> : <otherwise default to this>
+
+  const toggleCaps = () => {
+    setCapsLock(capsLock => !capsLock)
+    console.log(keys)
+  }
+ 
+  const [keys, setkeys] = useState([
+      layout.map((key,index)=> {
+
+        if(key === 'caps') {
+          return <button onClick={toggleCaps} key={index}>{capsLock ? key.toUpperCase() : key.toLowerCase()}</button>
+        } else {
+          return <button onClick={input} key={index}>{capsLock ? key.toUpperCase() : key.toLowerCase()}</button>
+        }
+      }
     )
   ])
+
 
   return (
     <div>

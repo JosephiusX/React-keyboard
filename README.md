@@ -63,3 +63,11 @@ it would be the more inclusive option though
   https://medium.com/codex/how-to-use-array-in-reactjs-2a30d8b72503
 
 Next I want to try to add event listeners as well as styles, using the map function of corse
+
+test concatinating into textarea. 
+
+I need conditional logic for setting values of special buttions as well as the button styling. 
+
+    - insert space when space is pressed
+    - baskspace
+    - add a clear button to clear the textarea
