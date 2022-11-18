@@ -71,3 +71,7 @@ I need conditional logic for setting values of special buttions as well as the b
     - insert space when space is pressed
     - baskspace
     - add a clear button to clear the textarea
+
+? caps lock trouble
+
+    *to update keys when caps lock was toggled I needesd to pass setkeys(keysLogic()) into useEffect, to run only when caps was changed
