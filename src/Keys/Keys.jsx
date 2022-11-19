@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
+import styled from 'styled-components';
 
 export const Keys = () => {
   
@@ -25,7 +26,6 @@ export const Keys = () => {
   const enter = () => console.log('submit whats in the text area and clear it')
   const clear = () => setText("");
   
-
   const keysLogic = () => {
       return layout.map((key,index)=> {
         if(key === 'caps') return <button onClick={toggleCaps} key={index}>{key}</button>
@@ -42,9 +42,8 @@ export const Keys = () => {
 
   // keyboard logic state
   const [keys, setkeys] = useState(keysLogic())
-  
+
   useEffect(() => {
-    // console.log('capsLock is', capsLock);
     setkeys(keysLogic())
   },[capsLock])
   
@@ -55,3 +54,14 @@ export const Keys = () => {
     </>
   )
 };
+
+const Button = styled.button`
+  background: palevioletred;
+  border-radius: 3px;
+  border: none;
+  color: white;
+`
+
+const TomatoButton = styled(Button)`
+  background: tomato;
+`
