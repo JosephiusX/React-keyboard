@@ -19,17 +19,15 @@ export const Keys = () => {
   const [capsLock, setCapsLock] = useState(false)
 
   const toggleCaps = () => setCapsLock(capsLock => !capsLock)
-
-  const space = (e) => {
-    setText(text => text + " ");
-  }
+  const space = () => setText(text => text + " ");
+  const backspace = () => setText(text => text.slice(0, -1));
   
+
   const keysLogic = () => {
       return layout.map((key,index)=> {
-
         if(key === 'caps') return <button onClick={toggleCaps} key={index}>{key}</button>
-        
         if(key === 'space') return <button onClick={space} key={index}>{key}</button>
+        if(key === 'backspace') return <button onClick={backspace} key={index}>{key}</button>
         
 
         else {
