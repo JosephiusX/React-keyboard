@@ -2,10 +2,8 @@ import React, {useState, useRef, useEffect} from 'react';
 
 export const Keys = () => {
   
-  const input = (e) => {
-    setText(prevText => prevText + e.target.textContent)
-  }
-
+  const input = (e) => setText(prevText => prevText + e.target.textContent)
+  console.log(input);
   // textarea initial state
   const [text, setText] = useState("");
 
@@ -17,20 +15,24 @@ export const Keys = () => {
     "space"
   ]
 
-  
   // capsLock state
   const [capsLock, setCapsLock] = useState(false)
 
-  
-  const toggleCaps = () => {
-    setCapsLock(capsLock => !capsLock)
+  const toggleCaps = () => setCapsLock(capsLock => !capsLock)
+
+  const space = (e) => {
+    setText(text => text + " ");
   }
   
   const keysLogic = () => {
       return layout.map((key,index)=> {
-        if(key === 'caps') {
-          return <button onClick={toggleCaps} key={index}>{capsLock ? key.toUpperCase() : key.toLowerCase()}</button>
-        } else {
+
+        if(key === 'caps') return <button onClick={toggleCaps} key={index}>{key}</button>
+        
+        if(key === 'space') return <button onClick={space} key={index}>{key}</button>
+        
+
+        else {
           return <button onClick={input} key={index}>{capsLock ? key.toUpperCase() : key.toLowerCase()}</button>
         }
       }
